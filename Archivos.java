@@ -1,4 +1,4 @@
-//CLASE PARA EL MANEJO DE ARCHIVOS
+//CLASE PARA EL MANEJO DE ARCHIVOS Pureba
 
 import java.io.*;
 
