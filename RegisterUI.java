@@ -24,6 +24,7 @@ public class RegisterUI extends JFrame{
     /**Constructor */
     RegisterUI(){
 
+    	super("window");
     	//Button Group
     	sexo.add(mascRB);
     	sexo.add(femRB);
@@ -67,10 +68,9 @@ public class RegisterUI extends JFrame{
 
     public class CancelListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			//content.dispose();
+			setVisible(false);
 		}
     }
-
 
     public class RegisterListener implements ActionListener{
 		private Archivos arch = new Archivos();
@@ -90,6 +90,8 @@ public class RegisterUI extends JFrame{
 			fields[7] = emailTF.getText();
 
 			arch.escribeArchivo(fields, 1);
+
+			setVisible(false);
     	}
     }
 }
