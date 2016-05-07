@@ -4,20 +4,20 @@ import java.lang.*;
 import java.awt.event.*;
 import java.awt.GridLayout;
 
-class LoggInUI extends JFrame{
+class LogIn extends JFrame{
 
     //... Components
     private JTextField usernameTF = new JTextField(50);
     private JTextField passwordTF = new JTextField(20);
     private JButton loggIn = new JButton("Logg In");
     private JButton register = new JButton("Registrarse");
-    private LoggInModel model;
+    private LogInModel model;
 
 
     /**Constructor */
-    LoggInUI(){
+    LogIn(){
 	//.. Logica
-	model = new LoggInModel();
+	model = new LogInModel();
 
 	//.. Componentes graficos
 	JPanel content = new JPanel();
@@ -42,7 +42,7 @@ class LoggInUI extends JFrame{
 
     public class LoggInListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			String username;
+		String username;
 			username = usernameTF.getText();
 			if(model.checaUsuario(username) == true){
 				System.out.println("Existe");
@@ -55,8 +55,8 @@ class LoggInUI extends JFrame{
 
     public class RegisterListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			RegisterUI window = new RegisterUI();
-			window.setVisible(true);
-		}
-    }
+			new Registro();
+    	}
+	}
 }
+ 

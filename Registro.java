@@ -4,11 +4,9 @@ import java.lang.*;
 import java.awt.event.*;
 import java.awt.GridLayout;
 
-public class RegisterUI extends JFrame{
+public class Registro{
 
-	//... Components 
-	//nickna,e, edad, nombre, sexo, altura, peso,  email, fecharegistro
-    private JTextField nombreTF = new JTextField(20);
+	private JTextField nombreTF = new JTextField(20);
     private JTextField nicknameTF = new JTextField(20);
     private JTextField passwordTF = new JTextField(20);
     private JTextField edadTF = new JTextField(20);
@@ -20,19 +18,19 @@ public class RegisterUI extends JFrame{
     private JTextField emailTF = new JTextField(40);
     private JButton cancel = new JButton("Cancelar");
     private JButton register = new JButton("Registrarse");
+	public JFrame frame = new JFrame();
 
-    /**Constructor */
-    RegisterUI(){
 
-    	//Button Group
-    	sexo.add(mascRB);
+	public Registro(){
+  		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setTitle("Register");
+  		frame.setVisible(true);
+
+  		sexo.add(mascRB);
     	sexo.add(femRB);
 
-		//.. Logica
-
-
-		//.. Componentes graficos
-		JPanel content = new JPanel();
+    	JPanel content = new JPanel();
+    	frame.add(content);
 		content.setBorder(new EmptyBorder(20, 20, 20, 20));
 		content.setLayout(new GridLayout(19, 1, 10, 10));
 		content.add(new JLabel("Nombre"));
@@ -55,24 +53,20 @@ public class RegisterUI extends JFrame{
 		content.add(register);
 		content.add(cancel);
 
-		//..Escucha botones
 		register.addActionListener(new RegisterListener());
 		cancel.addActionListener(new CancelListener());
 
-		this.setContentPane(content);
-		this.pack();
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		this.setTitle("Register");
-    }
+		frame.setContentPane(content);
+		frame.pack();
+	}
 
-    public class CancelListener implements ActionListener{
+	public class CancelListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			//content.dispose();
+			frame.dispose();
 		}
     }
 
-
-    public class RegisterListener implements ActionListener{
+	public class RegisterListener implements ActionListener{
 		private Archivos arch = new Archivos();
 
 		public void actionPerformed(ActionEvent e){
@@ -90,6 +84,8 @@ public class RegisterUI extends JFrame{
 			fields[7] = emailTF.getText();
 
 			arch.escribeArchivo(fields, 1);
+
+			frame.dispose();
     	}
     }
 }
