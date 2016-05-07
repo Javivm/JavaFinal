@@ -16,4 +16,8 @@ public class LogInModel{
 	public boolean checaUsuario(String username){
 		return archivo.checaExiste(username+".txt");
 	}
+
+	public String leePassword(String username){
+		return archivo.leePassword(username+".txt");
+	}
 }

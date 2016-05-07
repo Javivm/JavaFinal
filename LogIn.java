@@ -60,10 +60,17 @@ class LogIn extends JFrame{
 
     public class LoggInListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-		String username;
+		String username, password, pswd;
 			username = usernameTF.getText();
+			password = passwordTF.getText();
 			if(model.checaUsuario(username) == true){
 				System.out.println("Existe");
+				pswd = model.leePassword(username);
+				if(pswd.equals(password)){
+					System.out.println("Works");
+				}else{
+					System.out.println("Password incorrecto");
+				}
 			}else{
 				System.out.println("No Existe");
 			}

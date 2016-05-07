@@ -13,7 +13,7 @@ import java.io.*;
 
 public class Archivos{
 	
-
+	private BufferedReader buffer;
 	private FileInputStream file;
 	private FileOutputStream out;
 
@@ -44,6 +44,37 @@ public class Archivos{
 		    }
 		}
 		return true;
+	}
+
+	public String leePassword(String archivo){
+		int i = 0;
+		try{
+			file = new FileInputStream(archivo);			
+		}catch(FileNotFoundException e){
+
+		}
+
+		InputStreamReader isr = new InputStreamReader(file);
+		String line = "";
+		try{
+			buffer = new BufferedReader(isr);
+			while((line = buffer.readLine()) != null){
+				if(i == 2){
+					return line;				
+				}
+				i++;
+			}
+		}catch(IOException e){
+
+		}finally{
+		    	try{
+			if(file != null)
+			    file.close();
+		    }catch(IOException e){
+
+		    }
+		}
+		return "";
 	}
 
 	//ESCRIBIR ARCHIVO
