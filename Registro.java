@@ -1,3 +1,12 @@
+/**
+ * 
+ * 
+ * @author Armando Azar
+ * @author Santiago Menendez
+ * @author Luis Padilla
+ * @author Javier Vega
+ */
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.lang.*;
@@ -20,7 +29,14 @@ public class Registro{
     private JButton register = new JButton("Registrarse");
 	public JFrame frame = new JFrame();
 
-
+	/**
+	 * 
+	 * 
+	 * @author Armando Azar
+	 * @author Santiago Menendez
+	 * @author Luis Padilla
+	 * @author Javier Vega
+	 */
 	public Registro(){
   		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setTitle("Register");
@@ -60,12 +76,29 @@ public class Registro{
 		frame.pack();
 	}
 
+	/**
+	 * 
+	 * 
+	 * @author Armando Azar
+	 * @author Santiago Menendez
+	 * @author Luis Padilla
+	 * @author Javier Vega
+	 */
 	public class CancelListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			frame.dispose();
 		}
     }
 
+
+	/**
+	 * 
+	 * 
+	 * @author Armando Azar
+	 * @author Santiago Menendez
+	 * @author Luis Padilla
+	 * @author Javier Vega
+	 */
 	public class RegisterListener implements ActionListener{
 		private Archivos arch = new Archivos();
 

@@ -1,3 +1,12 @@
+/**
+ * 
+ * 
+ * @author Armando Azar
+ * @author Santiago Menendez
+ * @author Luis Padilla
+ * @author Javier Vega
+ */
+
 //CLASE PARA EL MANEJO DE ARCHIVOS Pureba
 
 import java.io.*;
@@ -12,6 +21,15 @@ public class Archivos{
 		//BUSCA Y COMPARA PALABRA
 
 	//CHECAR SI EL ARCHIVO DESEADO EXISTE
+
+	/**
+	 * 
+	 * 
+	 * @author Armando Azar
+	 * @author Santiago Menendez
+	 * @author Luis Padilla
+	 * @author Javier Vega
+	 */
 	public boolean checaExiste(String archivo){
 		try{
 			file = new FileInputStream(archivo);
@@ -32,6 +50,14 @@ public class Archivos{
 	//PARAMS: String[] argumentos, arreglo de argumentos en string que se desean escribir
 	//PARAMS: int fileType, el tipo de rchivo qu se desea generar
 			// fileType = 1, New User
+	/**
+	 * 
+	 * 
+	 * @author Armando Azar
+	 * @author Santiago Menendez
+	 * @author Luis Padilla
+	 * @author Javier Vega
+	 */
 	public void escribeArchivo(String[] argumentos, int fileType){	
 
 		String enterS = "\n";
@@ -53,7 +79,6 @@ public class Archivos{
 			}catch(IOException e){
 
 			}
-
 		}
 	}
 }

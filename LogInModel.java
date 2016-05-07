@@ -1,3 +1,12 @@
+/**
+ * 
+ * 
+ * @author Armando Azar
+ * @author Santiago Menendez
+ * @author Luis Padilla
+ * @author Javier Vega
+ */
+
 import java.io.*;
 
 public class LogInModel{

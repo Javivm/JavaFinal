@@ -1,3 +1,12 @@
+/**
+ * 
+ * 
+ * @author Armando Azar
+ * @author Santiago Menendez
+ * @author Luis Padilla
+ * @author Javier Vega
+ */
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.lang.*;
@@ -40,6 +49,15 @@ class LogIn extends JFrame{
 	this.setTitle("LoggIn");
     }
 
+	/**
+	 * 
+	 * 
+	 * @author Armando Azar
+	 * @author Santiago Menendez
+	 * @author Luis Padilla
+	 * @author Javier Vega
+	 */
+
     public class LoggInListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 		String username;
@@ -52,6 +70,14 @@ class LogIn extends JFrame{
 		}
     }
 
+	/**
+	 * 
+	 * 
+	 * @author Armando Azar
+	 * @author Santiago Menendez
+	 * @author Luis Padilla
+	 * @author Javier Vega
+	 */
 
     public class RegisterListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
@@ -59,4 +85,3 @@ class LogIn extends JFrame{
     	}
 	}
 }
- 
