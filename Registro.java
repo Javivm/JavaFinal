@@ -21,10 +21,19 @@ public class Registro{
 	public JFrame frame = new JFrame();
 
 
+<<<<<<< HEAD:Registro.java
 	public Registro(){
   		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setTitle("Register");
   		frame.setVisible(true);
+=======
+    	super("window");
+    	//Button Group
+    	sexo.add(mascRB);
+    	sexo.add(femRB);
+
+		//.. Logica
+>>>>>>> 1f27cf6030bd009382c69797a60a8370ffab980c:RegisterUI.java
 
   		sexo.add(mascRB);
     	sexo.add(femRB);
@@ -62,11 +71,19 @@ public class Registro{
 
 	public class CancelListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+<<<<<<< HEAD:Registro.java
 			frame.dispose();
 		}
     }
 
 	public class RegisterListener implements ActionListener{
+=======
+			setVisible(false);
+		}
+    }
+
+    public class RegisterListener implements ActionListener{
+>>>>>>> 1f27cf6030bd009382c69797a60a8370ffab980c:RegisterUI.java
 		private Archivos arch = new Archivos();
 
 		public void actionPerformed(ActionEvent e){
@@ -85,7 +102,11 @@ public class Registro{
 
 			arch.escribeArchivo(fields, 1);
 
+<<<<<<< HEAD:Registro.java
 			frame.dispose();
+=======
+			setVisible(false);
+>>>>>>> 1f27cf6030bd009382c69797a60a8370ffab980c:RegisterUI.java
     	}
     }
 }
