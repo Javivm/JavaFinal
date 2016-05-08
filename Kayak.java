@@ -25,7 +25,7 @@ public class Kayak extends Actividad
 	 */
 	public Kayak(float tiempo, float distancia, float peso)
 	{
-		super(tiempo, distancia);
+		super(tiempo, distancia, 5);
 		this.setCalorias(peso);
 	}
 

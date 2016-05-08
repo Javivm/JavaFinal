@@ -1,10 +1,11 @@
 /**
  * 
- * 
+ *
  * @author Armando Azar
  * @author Santiago Menendez
  * @author Luis Padilla
  * @author Javier Vega
+ * @version %G%, %I%
  */
 
 import javax.swing.*;

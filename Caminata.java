@@ -25,7 +25,7 @@ public class Caminata extends Actividad
 	 */
 	public Caminata(float tiempo, float distancia, float peso)
 	{
-		super(tiempo, distancia);
+		super(tiempo, distancia, 2);
 		this.setCalorias(peso);
 	}
 
