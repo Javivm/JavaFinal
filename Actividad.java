@@ -1,5 +1,5 @@
 /**
- * Clase abstracta la cual define los atributos y
+ * Clase abstracta la cual define los atributos y 
  * metodos de las actividades.
  *
  * @author Armando Azar
