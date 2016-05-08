@@ -46,48 +46,11 @@ public class Archivos{
 		return true;
 	}
 
-	public String leePassword(String archivo){
-		int i = 0;
-		try{
-			file = new FileInputStream(archivo);			
-		}catch(FileNotFoundException e){
-
-		}
-
-		InputStreamReader isr = new InputStreamReader(file);
-		String line = "";
-		try{
-			buffer = new BufferedReader(isr);
-			while((line = buffer.readLine()) != null){
-				if(i == 2){
-					return line;				
-				}
-				i++;
-			}
-		}catch(IOException e){
-
-		}finally{
-		    	try{
-			if(file != null)
-			    file.close();
-		    }catch(IOException e){
-
-		    }
-		}
-		return "";
-	}
-
-	//ESCRIBIR ARCHIVO
-	//PARAMS: String[] argumentos, arreglo de argumentos en string que se desean escribir
-	//PARAMS: int fileType, el tipo de rchivo qu se desea generar
-			// fileType = 1, New User
 	/**
+	 * Metodo que escribe los datos del registro del usuario en un archivo
 	 * 
-	 * 
-	 * @author Armando Azar
-	 * @author Santiago Menendez
-	 * @author Luis Padilla
-	 * @author Javier Vega
+	 * @param argumentos los argumentos que se van a guardar en el archivo
+	 * @param fileType el tipo de archivo que se va a guardar
 	 */
 	public void escribeArchivo(String[] argumentos, int fileType){	
 
@@ -138,15 +101,446 @@ public class Archivos{
 
 
 
+	/**
+	 * Metodo lee el nombre del usuario desde un archivo
+	 * 
+	 * @param usuario el username del usuario
+	 */
+	public String leeNombre(String usuario)
+	{
+		int i = 0;
+		try
+		{
+			file = new FileInputStream(usuario + ".txt");			
+		}catch(FileNotFoundException e)
+		{
 
+		}
 
+		InputStreamReader isr = new InputStreamReader(file);
+		String line = "";
+		try
+		{
+			buffer = new BufferedReader(isr);
+			while((line = buffer.readLine()) != null)
+			{
+				if(i == 0)
+				{
+					return line;				
+				}
+				i++;
+			}
+		}
+		catch(IOException e)
+		{
 
+		}
+		finally
+		{
+		    	try
+		    	{
+					if(file != null)
+			    		file.close();
+		    }
+		    catch(IOException e)
+		    {
 
+		    }
+		}
+		return "";
+	}
 
+	/**
+	 * Metodo lee el nickname del usuario
+	 * 
+	 * @param usuario el username del usuario
+	 */
+	public String leeNickname(String usuario)
+	{
+		int i = 0;
+		try
+		{
+			file = new FileInputStream(usuario + ".txt");			
+		}catch(FileNotFoundException e)
+		{
 
+		}
 
+		InputStreamReader isr = new InputStreamReader(file);
+		String line = "";
+		try
+		{
+			buffer = new BufferedReader(isr);
+			while((line = buffer.readLine()) != null)
+			{
+				if(i == 1)
+				{
+					return line;				
+				}
+				i++;
+			}
+		}
+		catch(IOException e)
+		{
 
+		}
+		finally
+		{
+		    	try
+		    	{
+					if(file != null)
+			    		file.close();
+		    }
+		    catch(IOException e)
+		    {
 
+		    }
+		}
+		return "";
+	}
+
+	/**
+	 * Metodo lee la contrasena del usuario
+	 * 
+	 * @param usuario el username del usuario
+	 */
+	public String leePassword(String usuario)
+	{
+		int i = 0;
+		try
+		{
+			file = new FileInputStream(usuario + ".txt");			
+		}catch(FileNotFoundException e)
+		{
+
+		}
+
+		InputStreamReader isr = new InputStreamReader(file);
+		String line = "";
+		try
+		{
+			buffer = new BufferedReader(isr);
+			while((line = buffer.readLine()) != null)
+			{
+				if(i == 2)
+				{
+					return line;				
+				}
+				i++;
+			}
+		}
+		catch(IOException e)
+		{
+
+		}
+		finally
+		{
+		    	try
+		    	{
+					if(file != null)
+			    		file.close();
+		    }
+		    catch(IOException e)
+		    {
+
+		    }
+		}
+		return "";
+	}
+
+	/**
+	 * Metodo lee la fecha de nacimiento del usuario
+	 * 
+	 * @param usuario el username del usuario
+	 */
+	public String leeFecha(String usuario)
+	{
+		int i = 0;
+		try
+		{
+			file = new FileInputStream(usuario + ".txt");			
+		}catch(FileNotFoundException e)
+		{
+
+		}
+
+		InputStreamReader isr = new InputStreamReader(file);
+		String line = "";
+		try
+		{
+			buffer = new BufferedReader(isr);
+			while((line = buffer.readLine()) != null)
+			{
+				if(i == 3)
+				{
+					return line;				
+				}
+				i++;
+			}
+		}
+		catch(IOException e)
+		{
+
+		}
+		finally
+		{
+		    	try
+		    	{
+					if(file != null)
+			    		file.close();
+		    }
+		    catch(IOException e)
+		    {
+
+		    }
+		}
+		return "";
+	}
+
+	/**
+	 * Metodo lee el genero del usuario
+	 * 
+	 * @param usuario el username del usuario
+	 */
+	public String leeGenero(String usuario)
+	{
+		int i = 0;
+		try
+		{
+			file = new FileInputStream(usuario + ".txt");			
+		}catch(FileNotFoundException e)
+		{
+
+		}
+
+		InputStreamReader isr = new InputStreamReader(file);
+		String line = "";
+		try
+		{
+			buffer = new BufferedReader(isr);
+			while((line = buffer.readLine()) != null)
+			{
+				if(i == 4)
+				{
+					return line;				
+				}
+				i++;
+			}
+		}
+		catch(IOException e)
+		{
+
+		}
+		finally
+		{
+		    	try
+		    	{
+					if(file != null)
+			    		file.close();
+		    }
+		    catch(IOException e)
+		    {
+
+		    }
+		}
+		return "";
+	}
+
+	/**
+	 * Metodo lee la altura del usuario
+	 * 
+	 * @param usuario el username del usuario
+	 */
+	public String leeAltura(String usuario)
+	{
+		int i = 0;
+		try
+		{
+			file = new FileInputStream(usuario + ".txt");			
+		}catch(FileNotFoundException e)
+		{
+
+		}
+
+		InputStreamReader isr = new InputStreamReader(file);
+		String line = "";
+		try
+		{
+			buffer = new BufferedReader(isr);
+			while((line = buffer.readLine()) != null)
+			{
+				if(i == 5)
+				{
+					return line;				
+				}
+				i++;
+			}
+		}
+		catch(IOException e)
+		{
+
+		}
+		finally
+		{
+		    	try
+		    	{
+					if(file != null)
+			    		file.close();
+		    }
+		    catch(IOException e)
+		    {
+
+		    }
+		}
+		return "";
+	}
+
+	/**
+	 * Metodo lee el peso del usuario
+	 * 
+	 * @param usuario el username del usuario
+	 */
+	public String leePeso(String usuario)
+	{
+		int i = 0;
+		try
+		{
+			file = new FileInputStream(usuario + ".txt");			
+		}catch(FileNotFoundException e)
+		{
+
+		}
+
+		InputStreamReader isr = new InputStreamReader(file);
+		String line = "";
+		try
+		{
+			buffer = new BufferedReader(isr);
+			while((line = buffer.readLine()) != null)
+			{
+				if(i == 6)
+				{
+					return line;				
+				}
+				i++;
+			}
+		}
+		catch(IOException e)
+		{
+
+		}
+		finally
+		{
+		    	try
+		    	{
+					if(file != null)
+			    		file.close();
+		    }
+		    catch(IOException e)
+		    {
+
+		    }
+		}
+		return "";
+	}
+
+	/**
+	 * Metodo lee el peso del usuario
+	 * 
+	 * @param usuario el username del usuario
+	 */
+	public String leeCorreo(String usuario)
+	{
+		int i = 0;
+		try
+		{
+			file = new FileInputStream(usuario + ".txt");			
+		}catch(FileNotFoundException e)
+		{
+
+		}
+
+		InputStreamReader isr = new InputStreamReader(file);
+		String line = "";
+		try
+		{
+			buffer = new BufferedReader(isr);
+			while((line = buffer.readLine()) != null)
+			{
+				if(i == 7)
+				{
+					return line;				
+				}
+				i++;
+			}
+		}
+		catch(IOException e)
+		{
+
+		}
+		finally
+		{
+		    	try
+		    	{
+					if(file != null)
+			    		file.close();
+		    }
+		    catch(IOException e)
+		    {
+
+		    }
+		}
+		return "";
+	}
+
+	/**
+	 * Metodo lee el peso del usuario
+	 * 
+	 * @param usuario el username del usuario
+	 */
+	public String leeRegistro(String usuario)
+	{
+		int i = 0;
+		try
+		{
+			file = new FileInputStream(usuario + ".txt");			
+		}catch(FileNotFoundException e)
+		{
+
+		}
+
+		InputStreamReader isr = new InputStreamReader(file);
+		String line = "";
+		try
+		{
+			buffer = new BufferedReader(isr);
+			while((line = buffer.readLine()) != null)
+			{
+				if(i == 8)
+				{
+					return line;				
+				}
+				i++;
+			}
+		}
+		catch(IOException e)
+		{
+
+		}
+		finally
+		{
+		    	try
+		    	{
+					if(file != null)
+			    		file.close();
+		    }
+		    catch(IOException e)
+		    {
+
+		    }
+		}
+		return "";
+	}
 
 	/**
 	 * Metodo que guarda una actividad en el archivo de historial del usuario
@@ -154,7 +548,7 @@ public class Archivos{
 	 * @param usuario el username del usuario
 	 * @param actividad el string 
 	 */
-	public void guardaActividad(String usuario, String actividad)
+	public void guardaActividad(String usuario)
 	{
 		BufferedWriter buffer = null;
  

@@ -22,6 +22,7 @@ public class Usuario
 	private String nombre;
 	private String nickname;
 	private Calendar fecha;  //fecha de nacimiento
+	private String password;
 	private String sexo;
 	private float altura;
 	private float peso;
@@ -34,7 +35,7 @@ public class Usuario
 	 * @param 
 	 * @param 
 	 */
-	public Usuario(String nombre, String nickname, String fecha, String sexo, float altura, float peso, String correo, String registro)
+	public Usuario(String nombre, String nickname, String fecha, String password, String sexo, float altura, float peso, String correo, String registro)
 	{
 		this.nombre = nombre;
 		this.nickname = nickname;
@@ -44,6 +45,7 @@ public class Usuario
 		this.correo = correo;
 		this.setFecha(fecha);
 		this.setRegistro(registro);
+		this.password = password;
 	}
 
 	/**
@@ -119,6 +121,25 @@ public class Usuario
 			aTotal++;
 
 		return aTotal;
+	}
+
+	/**
+	 * Metodo que modifica la password del usuario
+	 * 
+	 */
+	public void setPassword(String password)
+	{
+		this.password = password;
+	}
+
+	/**
+	 * Metodo que regresa la password del usuario
+	 * 
+	 * @return el nickname del usuario
+	 */
+	public String getPassword()
+	{
+		return this.password;
 	}
 
 	/**
