@@ -81,7 +81,25 @@ public class Archivos{
 
 
 
+	public void borra(String usuario)
+	{
 
+		try{
+		    		
+			File file = new File(usuario + ".txt");
+		        	
+		    if(file.delete()){
+		    	System.out.println("si");
+		    }else{
+		    	System.out.println("no");
+		    }
+		    	   
+		}catch(Exception e){
+	   		
+		  	e.printStackTrace();
+		   		
+		}   
+	}
 
 
 

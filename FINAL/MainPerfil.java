@@ -1,7 +1,7 @@
 
 
 public class MainPerfil{
-		public MainPerfil(Usuario datos){	
+	public MainPerfil(Usuario datos){	
 	    Perfil window = new Perfil(datos);
 	    window.setVisible(true);
     }

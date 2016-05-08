@@ -28,7 +28,7 @@ public class Usuario
 	private float peso;
 	private String correo;
 	private Calendar registro;
-	private Historial historial;
+	//private Historial historial;
 
 	/**
 	 * Constructor de la clase
@@ -47,7 +47,7 @@ public class Usuario
 		this.setFecha(fecha);
 		this.setRegistro(registro);
 		this.password = password;
-		this.historial(nickname);
+		//this.historial = new Historial(nickname);
 	}
 
 	/**
@@ -123,6 +123,16 @@ public class Usuario
 			aTotal++;
 
 		return aTotal;
+	}
+
+	/**
+	 * Metodo que regresa la fecha de nacimiento
+	 * 
+	 * @return la fecha de nacimiento
+	 */
+	public String getFechaBien()
+	{
+		return Integer.toString(fecha.get(Calendar.DAY_OF_MONTH))+"/"+Integer.toString(fecha.get(Calendar.MONTH))+"/"+Integer.toString(fecha.get(Calendar.YEAR));
 	}
 
 	/**

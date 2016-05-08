@@ -38,9 +38,9 @@ public class Natacion extends Actividad
 	 * @param tipo el tipo de actividad
 	 * @param calorias las calorias quemadas
 	 */
-	public Natacion(String fecha, String tiempo, String distancia, String tipo, String calorias)
+	public Natacion(String dia, String mes, String ano, String tiempo, String distancia, String tipo, String calorias)
 	{
-		super(fecha, tiempo, distancia, tipo, calorias);
+		super(dia, mes, ano, tiempo, distancia, tipo, calorias);
 	}
 
 	/**

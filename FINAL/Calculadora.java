@@ -15,6 +15,7 @@ import java.awt.GridLayout;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.*;
+import java.lang.Math;
 
 public class Calculadora extends JFrame{
     
@@ -152,7 +153,24 @@ public class Calculadora extends JFrame{
 
 	class CalcPerfilListener implements ActionListener{
 	    public void actionPerformed(ActionEvent e){
-	    	
+	    	int edad = datos.getFecha(); 
+	    	int peso = Math.round(datos.getPeso());
+	    	double maxBPM;
+	    	double[] zona1 = new double[2];
+	    	double[] zona2 = new double[2];
+	    	double[] zona3 = new double[2];
+	    	double[] zona4 = new double[2];
+	    	double[] zona5 = new double[2];
+	    	String sexo = datos.getSexo();
+			maxBPM = CalculadoraModel.calculaBPM(edad, peso, sexo);
+			zona1 = CalculadoraModel.calculaZona1();
+			zona2 = CalculadoraModel.calculaZona2();
+			zona3 = CalculadoraModel.calculaZona3();
+			zona4 = CalculadoraModel.calculaZona4();
+			zona5 = CalculadoraModel.calculaZona5();
+			new MainResultados(maxBPM, zona1, zona2, zona3, zona4, zona5);
+			pesoTF.set(Float.toString(datos.getPeso()));
+    		edadTF.set(datos.getFecha());
 	    }
 	}
 

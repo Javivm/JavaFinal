@@ -118,7 +118,7 @@ public class Rutina extends JFrame{//implementando el listener de eventos
 	class RegresarListener implements ActionListener{
 	    public void actionPerformed(ActionEvent e){
 			new MainMenuPrincipal(datos);
-			frame.dispose();
+			dispose();
 	    }
 	}
 }

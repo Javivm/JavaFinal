@@ -22,6 +22,7 @@ public abstract class Actividad
 	private float tiempo;
 	private float distancia;
 	protected float calorias;
+	private int tipo;
 
 	/**
 	 * Constructor de la clase actividad el cual inicializa una instancia de la clase.
@@ -50,11 +51,11 @@ public abstract class Actividad
 		//fecha
 
 		this.fecha = Calendar.getInstance();
-		this.fecha.set(ano, mes, dia);
-		this.tiempo = Float.toString(tiempo);
-		this.distancia = Float.toString(distancia);
-		this.tipo = Integer.toString(tipo);
-		this.calorias = Float.toString(calorias);
+		this.fecha.set(Integer.parseInt(ano), Integer.parseInt(mes), Integer.parseInt(dia));
+		this.tiempo = Float.valueOf(tiempo);
+		this.distancia = Float.valueOf(distancia);
+		this.tipo = Integer.parseInt(tipo);
+		this.calorias = Float.valueOf(calorias);
 	}
 
 	/**

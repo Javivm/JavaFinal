@@ -116,7 +116,9 @@ public class Opciones extends JFrame{
 
 	class bajaListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			System.out.println("Baja");
+			Archivos uso = new Archivos();
+			uso.borra(datos.getNickname());
+			System.exit(0);
 		}
 	}
 
