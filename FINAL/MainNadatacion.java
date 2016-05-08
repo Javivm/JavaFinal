@@ -1,6 +1,6 @@
 public class MainNadatacion{
-    public MainNadatacion(){
-	DescNatacion window = new DescNatacion();
+    public MainNadatacion(Usuario datos){
+	DescNatacion window = new DescNatacion(datos);
 	window.setVisible(true);
     }
 }

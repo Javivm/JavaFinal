@@ -17,12 +17,15 @@ import javax.swing.border.LineBorder;
 class DescEliptica extends JFrame{
 
    private JLabel actividades=new JLabel("ELIPTICA");
-	
+	private Usuario datos;
+
 	//CONSTRUCTOR
-    public DescEliptica(){
+    public DescEliptica(Usuario datos){
 	JPanel content = new JPanel();
     JButton regresar = new JButton("Regresar");
 	
+    this.datos = datos;
+
     content.setBackground(new Color(200,200,200));  
 	actividades.setFont(new Font("Serif",Font.BOLD,80));
 	content.add(actividades);
@@ -48,8 +51,7 @@ class DescEliptica extends JFrame{
 
 class regresarListener implements ActionListener{
     public void actionPerformed(ActionEvent e){
-	System.out.println("Natacion");
-	new MainActividades();
+	new MainActividades(datos);
 	dispose();
     }
 }

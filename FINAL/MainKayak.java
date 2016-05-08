@@ -1,6 +1,6 @@
 public class MainKayak{
-    public MainKayak(){
-    DescKayak window = new DescKayak();
+    public MainKayak(Usuario datos){
+    DescKayak window = new DescKayak(datos);
     window.setVisible(true);
     }
 }

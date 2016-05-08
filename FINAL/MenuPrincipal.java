@@ -137,7 +137,7 @@ public class MenuPrincipal extends JFrame{
 	class opcionesListener implements ActionListener{
 	public void actionPerformed(ActionEvent e){
 		System.out.println("Opciones");
-		new MainOpciones();
+		new MainOpciones(datos);
 		dispose();
 		}
 	}

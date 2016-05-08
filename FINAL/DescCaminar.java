@@ -17,9 +17,11 @@ import javax.swing.border.LineBorder;
 class DescCaminar extends JFrame{
 
    private JLabel actividades=new JLabel("CAMINAR");
-	
+	private Usuario datos;
 	//CONSTRUCTOR
-    public DescCaminar(){
+    public DescCaminar(Usuario datos){
+
+        this.datos = datos;
 
 	JPanel content = new JPanel();
     JButton regresar = new JButton("Regresar");
@@ -47,9 +49,8 @@ class DescCaminar extends JFrame{
     
     class regresarListener implements ActionListener{
     public void actionPerformed(ActionEvent e){
-	System.out.println("Carrera");
-	new MainActividades();
-	dispose();
+	   new MainActividades(datos);
+	   dispose();
     }
 }
 }
