@@ -169,8 +169,8 @@ public class Calculadora extends JFrame{
 			zona4 = CalculadoraModel.calculaZona4();
 			zona5 = CalculadoraModel.calculaZona5();
 			new MainResultados(maxBPM, zona1, zona2, zona3, zona4, zona5);
-			pesoTF.set(Float.toString(datos.getPeso()));
-    		edadTF.set(datos.getFecha());
+			pesoTF.setText(Float.toString(datos.getPeso()));
+    		edadTF.setText(Integer.toString(datos.getFecha()));
 	    }
 	}
 

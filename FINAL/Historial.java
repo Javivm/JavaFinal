@@ -16,17 +16,15 @@ import java.util.StringTokenizer;
 public class Historial
 {
 	ArrayList<Actividad> lista = new ArrayList<Actividad>();
+	Archivos arch = new Archivos();
+	String[] act = new String[] { };
+	int i;
 
 	Historial(String usuario)
 	{
-		//abre el archivo del usuario
-		Archivos archivo = new Archivos();  //se hace el objeto archivo
-		String[] listaString = archivo.leeActividad(usuario);  //se manda llamar la funcion que regresa un String[] con las actividades
-		//empieza a leer desde la linea 8
-		//jala recursivamente un string que es cada una de las actividades
-		//por cada sctring jalado se hace un tokenizer [4,8,2016,1,4.3,4.3,1935.0001]
-		//dia,mes,ano,tipo,distancia,tiempo,calorias
-
+		act = arch.leeActividad(usuario);
+		//System.out.println(act.length);
+		//System.out.println("a");
 		String dia;
 		String mes;
 		String ano;
@@ -34,45 +32,86 @@ public class Historial
 		String distancia;
 		String tipo;
 		String calorias;
-
 		StringTokenizer tokens;
-		int size = listaString.length;
-		for(int contador = 0 ; contador < size ; contador++)
-		{
-			//aqui abrir el string y checar el tipo
-			tokens = new StringTokenizer(listaString[contador], ",");
 
-			mes = tokens.nextToken();
-			dia = tokens.nextToken();
-			mes = tokens.nextToken();
-			ano = tokens.nextToken();
-			tiempo = tokens.nextToken();
-			distancia = tokens.nextToken();
-			tipo = tokens.nextToken();
-			calorias = tokens.nextToken();
+		for(i = 0; i < act.length - 3; i++){
+			if(act[i] != null){
+				//aqui abrir el string y checar el tipo
 
+				tokens = new StringTokenizer(act[i], ",");
 
-			switch(Integer.parseInt(tipo)) //tipo
-			{
-				case 1:
-					lista.add(new Bicicleta(dia, mes, ano, tiempo, distancia, tipo, calorias));
-					break;
-				case 2:
-					lista.add(new Caminata(dia, mes, ano, tiempo, distancia, tipo, calorias));
-					break;
-				case 3:
-					lista.add(new Carrera(dia, mes, ano, tiempo, distancia, tipo, calorias));
-					break;
-				case 4:
-					lista.add(new Eliptica(dia, mes, ano, tiempo, distancia, tipo, calorias));
-					break;
-				case 5:
-					lista.add(new Kayak(dia, mes, ano, tiempo, distancia, tipo, calorias));
-					break;
-				case 6:
-					lista.add(new Natacion(dia, mes, ano, tiempo, distancia, tipo, calorias));
-					break;
+				dia = tokens.nextToken();
+				mes = tokens.nextToken();
+				ano = tokens.nextToken();
+				tipo = tokens.nextToken();
+				tiempo = tokens.nextToken();
+				distancia = tokens.nextToken();
+				calorias = tokens.nextToken();
+
+				System.out.println(dia+mes+ano+tipo+tiempo+distancia+calorias);
+
+				switch(Integer.parseInt(tipo)) //tipo
+				{
+					case 1:
+						lista.add(new Bicicleta(dia, mes, ano, tiempo, distancia, tipo, calorias));
+						break;
+					case 2:
+						lista.add(new Caminata(dia, mes, ano, tiempo, distancia, tipo, calorias));
+						break;
+					case 3:
+						lista.add(new Carrera(dia, mes, ano, tiempo, distancia, tipo, calorias));
+						break;
+					case 4:
+						lista.add(new Eliptica(dia, mes, ano, tiempo, distancia, tipo, calorias));
+						break;
+					case 5:
+						lista.add(new Kayak(dia, mes, ano, tiempo, distancia, tipo, calorias));
+						break;
+					case 6:
+						lista.add(new Natacion(dia, mes, ano, tiempo, distancia, tipo, calorias));
+						break;
+				}
+				System.out.println(act[i]);
 			}
 		}
 	}
+
+	public void setDia(String dia)
+	{
+		this.dia = dia;
+	}
+	public int getDia()
+	{
+		return Integer.parseInt()
+	}
+	public void setMes(String mes)
+	{
+		this.mes = mes;
+	}
+	public int getMes(){}
+	public void setAno(String ano)
+	{
+		this.ano = ano;
+	}
+	public int getAno(){}
+	public void setTiempo(String tiempo)
+	{
+		this.tiempo = tiempo;
+	}
+	public float getTiempo(){}
+	public void setDistancia(String distancia)
+	{
+		this.distancia = distancia;
+	}
+	public float getDistancia(){}
+	public void setTipo(String tipo)
+	{
+		this.tipo = tipo;
+	}
+	public int getTipo(){}
+	public void setCalorias(String calorias)
+	{
+		this.calorias = calorias;
+	}
+	public float getCalorias(){}
 }
