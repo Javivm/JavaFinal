@@ -25,7 +25,7 @@ public class Natacion extends Actividad
 	 */
 	public Natacion(float tiempo, float distancia, float peso)
 	{
-		super(tiempo, distancia);
+		super(tiempo, distancia, 6);
 		this.setCalorias(peso);
 	}
 

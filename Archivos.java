@@ -112,4 +112,124 @@ public class Archivos{
 			}
 		}
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * Metodo que guarda una actividad en el archivo de historial del usuario
+	 * 
+	 * @param usuario el username del usuario
+	 * @param actividad el string 
+	 */
+	public void guardaActividad(String usuario, String actividad)
+	{
+		BufferedWriter buffer = null;
+ 
+		try
+		{
+			buffer = new BufferedWriter(new FileWriter(usuario + ".txt", true));
+		    buffer.write(actividad);
+		    buffer.newLine();
+		    buffer.flush();
+      	}
+      	catch(IOException ioe)
+      	{
+
+      	}
+      	finally
+      	{
+	    	if (buffer != null) 
+	    		try
+	    		{
+	        		buffer.close();
+     			}
+     			catch (IOException ioe2)
+     			{
+
+     			}
+    	}
+	}
+
+	/**
+	 * Metodo que lee una actividad en el archivo de historial del usuario
+	 * 
+	 * @param usuario el username del usuario
+	 */
+	public String leeActividad(String usuario)
+	{
+		int i = 0;
+
+		try
+		{
+			file = new FileInputStream(usuario + ".txt");
+		}
+		catch(FileNotFoundException e)
+		{
+
+		}
+
+		InputStreamReader isr = new InputStreamReader(file);
+		String line = "";
+
+		try
+		{
+			buffer = new BufferedReader(isr);
+			while((line = buffer.readLine()) != null)
+			{
+				if(i == 8)
+					return line;
+				i++;
+			}
+		}
+		catch(IOException e)
+		{
+
+		}
+		finally
+		{	
+			try
+			{
+				if(file != null)
+			    	file.close();
+		    }
+		    catch(IOException e)
+		    {
+
+		    }
+		}
+		return "";
+	}
 }

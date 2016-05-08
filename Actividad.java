@@ -21,19 +21,31 @@ public abstract class Actividad
 	private Calendar fecha;
 	private float tiempo;
 	private float distancia;
+	private int tipo;
 	protected float calorias;
 
 	/**
-	 * Constructor de la clase actividad el cual inicializa una instancia de la clase.
+	 * Constructor de la clase
 	 * 
 	 * @param tiempo el tiempo de la actividad
 	 * @param distancia la distancia de la actividad
 	 */
-	public Actividad(float tiempo, float distancia)
+	public Actividad(float tiempo, float distancia, int tipo)
 	{
+		this.tipo = tipo;
 		this.setFecha();
 		this.setTiempo(tiempo);
 		this.setDistancia(distancia);
+	}
+
+	/**
+	 * Metodo que obtiene el tipo de acividad que es
+	 * 
+	 * @return el tipo de actividad que es
+	 */
+	public int getTipo()
+	{
+		return tipo;
 	}
 
 	/**
@@ -132,5 +144,21 @@ public abstract class Actividad
 	public float getCalorias()
 	{
 		return this.calorias;
+	}
+
+	/**
+	 * Metodo que regresa un string con todos los valores de la actividad
+	 * 
+	 * @return el string con los valores
+	 */
+	public String toString()
+	{
+		return Integer.toString(getMes())+ "," +
+		Integer.toString(getDia())+ "," +
+		Integer.toString(getAno())+ "," +
+		Integer.toString(getTipo())+ "," +
+		Float.toString(getTiempo())+ "," +
+		Float.toString(getDistancia())+ "," +
+		Float.toString(getCalorias());
 	}
 }
