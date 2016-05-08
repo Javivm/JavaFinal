@@ -17,34 +17,37 @@ import javax.swing.border.LineBorder;
 class DescBici extends JFrame{
 
    private JLabel actividades=new JLabel("CICLISMO");
-	
+	private Usuario datos;
 	//CONSTRUCTOR
-    public DescBici(){
-    JButton regresar = new JButton("Regresar");
-    JPanel content = new JPanel();
-	content.setBackground(new Color(200,200,200));  
-	actividades.setFont(new Font("Serif",Font.BOLD,80));
-	content.add(actividades);
-	content.add(new ScrolledPane2());
-    LineBorder line=new LineBorder(Color.black,2,true);
-    content.add(regresar);
-    regresar.setBackground(new Color(255,119,10));
-    regresar.setBorder(line);
+    public DescBici(Usuario datos){
 
-    this.setLocationRelativeTo(null);   
-    this.setContentPane(content);
-    this.pack();
-    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    this.setTitle("Actividades");
-    this.setSize(500,700);
+        this.datos = datos;
 
-    regresar.addActionListener(new regresarListener());
+        JButton regresar = new JButton("Regresar");
+        JPanel content = new JPanel();
+    	content.setBackground(new Color(200,200,200));  
+    	actividades.setFont(new Font("Serif",Font.BOLD,80));
+    	content.add(actividades);
+    	content.add(new ScrolledPane2());
+        LineBorder line=new LineBorder(Color.black,2,true);
+        content.add(regresar);
+        regresar.setBackground(new Color(255,119,10));
+        regresar.setBorder(line);
+
+        this.setLocationRelativeTo(null);   
+        this.setContentPane(content);
+        this.pack();
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Actividades");
+        this.setSize(500,700);
+
+        regresar.addActionListener(new regresarListener());
 
     }
 class regresarListener implements ActionListener{
     public void actionPerformed(ActionEvent e){
 	System.out.println("Carrera");
-	new MainActividades();
+	new MainActividades(datos);
 	dispose();
     }
 }

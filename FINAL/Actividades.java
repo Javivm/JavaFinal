@@ -107,40 +107,35 @@ public class Actividades extends JFrame{//implementando el listener de eventos
 
 	class carreraListener implements ActionListener{
 	    public void actionPerformed(ActionEvent e){
-		System.out.println("Carrera");
-		new MainCorrer();
+		new MainCorrer(datos);
 		dispose();
 	    }
 	}
 
 	class caminataListener implements ActionListener{
-	    public void actionPerformed(ActionEvent e){
-		System.out.println("Caminata");
-		new MainCaminar();
+	    public void actionPerformed(ActionEvent e){;
+		new MainCaminar(datos);
 		dispose();
 	    }
 	}
 
 	class natacionListener implements ActionListener{
 	    public void actionPerformed(ActionEvent e){
-		System.out.println("Natacion");
-		new MainNadatacion();
+		new MainNadatacion(datos);
 		dispose();
 	    }
 	}
 
 	class elipticaListener implements ActionListener{
 	    public void actionPerformed(ActionEvent e){
-		System.out.println("Eliptica");
-		new MainEliptica();
+		new MainEliptica(datos);
 		dispose();
 	    }
 	}
 
 	class kayakListener implements ActionListener{
 	    public void actionPerformed(ActionEvent e){
-		System.out.println("kayak");
-		new MainKayak();
+		new MainKayak(datos);
 		dispose();
 	    }
 	}
@@ -148,7 +143,7 @@ public class Actividades extends JFrame{//implementando el listener de eventos
 	class bicicletaListener implements ActionListener{
 	    public void actionPerformed(ActionEvent e){
 		System.out.println("Bicicleta");
-		new MainBici();
+		new MainBici(datos);
 		dispose();
 	    }
 	}

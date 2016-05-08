@@ -17,36 +17,37 @@ import javax.swing.border.LineBorder;
 class DescCorrer extends JFrame{
 
    private JLabel actividades=new JLabel("CORRER");
-	
+	private Usuario datos;
 	//CONSTRUCTOR
-    public DescCorrer(){
+    public DescCorrer(Usuario datos){
 
-    JButton regresar = new JButton("Regresar");
-	JPanel content = new JPanel();
-    LineBorder line=new LineBorder(Color.black,2,true);
-	content.setBackground(new Color(200,200,200));  
-	actividades.setFont(new Font("Serif",Font.BOLD,80));
-	content.add(actividades);
-	content.add(new ScrolledPane4());
-	content.add(regresar);
-	regresar.setBackground(new Color(255,119,10));
-	regresar.setBorder(line);
-	regresar.addActionListener(new regresarListener());
-	
-    this.setLocationRelativeTo(null);   
-    this.setContentPane(content);
-    this.pack();
-    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    this.setTitle("Actividades");
-    this.setSize(500,700);
+        this.datos = datos;
+
+        JButton regresar = new JButton("Regresar");
+    	JPanel content = new JPanel();
+        LineBorder line=new LineBorder(Color.black,2,true);
+    	content.setBackground(new Color(200,200,200));  
+    	actividades.setFont(new Font("Serif",Font.BOLD,80));
+    	content.add(actividades);
+    	content.add(new ScrolledPane4());
+    	content.add(regresar);
+    	regresar.setBackground(new Color(255,119,10));
+    	regresar.setBorder(line);
+    	regresar.addActionListener(new regresarListener());
+    	
+        this.setLocationRelativeTo(null);   
+        this.setContentPane(content);
+        this.pack();
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Actividades");
+        this.setSize(500,700);
 
     }
 
 class regresarListener implements ActionListener{
     public void actionPerformed(ActionEvent e){
-	System.out.println("Carrera");
-	new MainActividades();
-	dispose();
+	   new MainActividades(datos);
+	   dispose();
     }
 }    
 

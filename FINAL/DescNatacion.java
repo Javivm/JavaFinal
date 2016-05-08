@@ -17,9 +17,12 @@ import javax.swing.border.LineBorder;
 class DescNatacion extends JFrame{
 
    private JLabel actividades=new JLabel("NATACION");
-	
+	private Usuario datos;
 	//CONSTRUCTOR
-    public DescNatacion(){
+    public DescNatacion(Usuario datos){
+
+        this.datos = datos;
+
 	JPanel content = new JPanel();
     JButton regresar = new JButton("Regresar");
 
@@ -50,8 +53,7 @@ class DescNatacion extends JFrame{
     
 class regresarListener implements ActionListener{
     public void actionPerformed(ActionEvent e){
-	System.out.println("Bicicleta");
-	new MainActividades();
+	new MainActividades(datos);
 	dispose();
     }
 }
