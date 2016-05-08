@@ -1,0 +1,74 @@
+ //librerias necesarias
+import java.awt.*;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.Dimension;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+import javax.swing.border.LineBorder;
+
+
+class DescCaminar extends JFrame{
+
+   private JLabel actividades=new JLabel("CAMINAR");
+	
+	//CONSTRUCTOR
+    public DescCaminar(){
+
+	JPanel content = new JPanel();
+    JButton regresar = new JButton("Regresar");
+	content.setBackground(new Color(200,200,200));  
+	actividades.setFont(new Font("Serif",Font.BOLD,80));
+	content.add(actividades);
+	content.add(new ScrolledPane5());
+    LineBorder line=new LineBorder(Color.black,2,true);
+    content.add(regresar);
+    regresar.setBackground(new Color(255,119,10));
+    regresar.setBorder(line);
+
+    regresar.addActionListener(new regresarListener());
+
+    this.setLocationRelativeTo(null);   
+    this.setContentPane(content);
+    this.pack();
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setTitle("Actividades");
+    this.setSize(500,700);
+
+
+
+    }
+    
+    class regresarListener implements ActionListener{
+    public void actionPerformed(ActionEvent e){
+	System.out.println("Carrera");
+	new MainActividades();
+	dispose();
+    }
+}
+}
+
+ 
+ class ScrolledPane5 extends JPanel
+{
+    private JScrollPane vertical;
+    private JTextArea console;
+
+    public ScrolledPane5()
+    {
+        console = new JTextArea("La andadura de los humanos \n (o a veces denominado paso) es la forma \n en que se lleva a cabo el desplazamiento utilizando \n los miembros del cuerpo humano. \n Los diferentes pasos se caracterizan \n por las diferencias en los patrones de movimiento \n de los miembros, velocidad adquirida, fuerzas, \n ciclos de energia potencial y cinetica, y cambios \n en el contacto con la superficie (suelo, piso, etc.) \n Se considera como un deporte.\n Una variable importante de los diferentes \n pasos es la secuencia de apoyo del pie \n como el pie toma contacto con el terreno \n  especificamente que parte del pie toma contacto \n primero con el suelo.apoyo del frente del pie  \n dedos-talon: se apoya primero la parte delantera \n del pieapoyo del centro de la planta del pie \n el talon y la parte anterior del pie se apoyan \n simultneamente apoyo del talon de la planta \n del pie talon-dedos: primero se apoya el talon \n del pie, luego ya toman un apoyo posterior \n (apoyo del talon) resulta en el centro inicial de \n presion ubicado en el tercio posterior del calzado \n (0 33% de la longitud del zapato) \n un apoyo central posee el centro de presion en el \n tercio central (3467% de la longitud del zapato)",28,28);
+		console.setFont(new Font("Serif",Font.PLAIN,15));
+		console.setBackground(new Color(255,119,10));
+		console.setPreferredSize(new Dimension(700,350));
+        console.setEditable(true);
+        vertical = new JScrollPane(console);
+        vertical.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        add(vertical);
+	}
+}

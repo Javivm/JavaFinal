@@ -1,0 +1,7 @@
+public class MainActividades{
+    public MainActividades(){
+	Actividades window2 = new Actividades();
+	window2.setVisible(true);
+    }
+}
+

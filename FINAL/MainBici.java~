@@ -1,0 +1,6 @@
+public class MainBici{
+    public MainBici(){
+	DesBici window = new DesBici();
+	window.setVisible(true);
+    }
+}

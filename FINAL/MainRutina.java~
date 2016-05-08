@@ -1,0 +1,6 @@
+public class MainRutina{
+    public MainRutina(){
+	DescRutina window = new DescRutina();
+	window.setVisible(true);
+    }
+}
