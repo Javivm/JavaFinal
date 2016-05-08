@@ -30,6 +30,20 @@ public class Carrera extends Actividad
 	}
 
 	/**
+	 * Costructor que se usa cuando se quiere crear una actividad nueva desde un archivo
+	 * 
+	 * @param fecha la fecha de la actividad
+	 * @param tiempo el tiempo de la actividad
+	 * @param distancia la distancia de la actividad
+	 * @param tipo el tipo de actividad
+	 * @param calorias las calorias quemadas
+	 */
+	public Carrera(String fecha, String tiempo, String distancia, String tipo, String calorias)
+	{
+		super(fecha, tiempo, distancia, tipo, calorias);
+	}
+
+	/**
 	 * Metodo que calcula a cantidad de calorias quemadas en una actividad.
 	 * 
 	 * @param peso el peso del usuario

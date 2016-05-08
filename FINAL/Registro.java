@@ -15,6 +15,12 @@ import java.awt.GridLayout;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.*;
+import java.util.*;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.StringTokenizer;
 
 public class Registro{
     
@@ -156,7 +162,7 @@ public class Registro{
 		private Archivos arch = new Archivos();
 		
 		public void actionPerformed(ActionEvent e){
-		    String[] fields = new String[8];
+		    String[] fields = new String[9];
 
 		    fields[0] = nombreTF.getText();
 		    fields[1] = nicknameTF.getText();
@@ -169,6 +175,9 @@ public class Registro{
 		    fields[5] = alturaTF.getText();
 		    fields[6] = pesoTF.getText();
 		    fields[7] = emailTF.getText();
+
+		    Calendar fecha = Calendar.getInstance();
+			fields[8] = Integer.toString(fecha.get(Calendar.DAY_OF_MONTH))+"/"+Integer.toString(fecha.get(Calendar.MONTH))+"/"+Integer.toString(fecha.get(Calendar.YEAR));
 
 		    arch.escribeArchivo(fields);
 

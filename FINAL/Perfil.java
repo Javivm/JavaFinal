@@ -23,12 +23,12 @@ class Perfil extends JFrame{//implementando el listener de eventos
         JLabel perfil=new JLabel("Perfil");
         JLabel nombre = new JLabel("Nombre: "+datos.getNombre());//+variable
         JLabel edad = new JLabel("Edad: "+datos.getFecha());
-        JLabel peso = new JLabel("Peso: "+datos.getPeso());
-        JLabel altura = new JLabel("Altura: "+datos.getAltura());
+        JLabel peso = new JLabel("Peso: "+datos.getPeso()+"kg");
+        JLabel altura = new JLabel("Altura: "+datos.getAltura()+"m");
         JLabel nickname = new JLabel("Nickname: "+datos.getNickname());
         JLabel sexo  = new JLabel("Sexo: "+datos.getSexo());
         JLabel email = new JLabel("E-mail: "+datos.getCorreo());
-        JLabel fecha_registro = new JLabel("Registrado");
+        JLabel fecha_registro = new JLabel("Registrado: "+datos.getRegistro());
         JLabel vacio=new JLabel(" ");
         JButton regresar = new JButton("Regresar");
 

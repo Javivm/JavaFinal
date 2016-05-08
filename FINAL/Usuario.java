@@ -21,13 +21,14 @@ public class Usuario
 {
 	private String nombre;
 	private String nickname;
-	private Calendar fecha;  //fecha de nacimiento
+	private Calendar fecha;
 	private String password;
 	private String sexo;
 	private float altura;
 	private float peso;
 	private String correo;
-	private Calendar registro;  //fecha de registro
+	private Calendar registro;
+	private Historial historial;
 
 	/**
 	 * Constructor de la clase
@@ -46,6 +47,7 @@ public class Usuario
 		this.setFecha(fecha);
 		this.setRegistro(registro);
 		this.password = password;
+		this.historial(nickname);
 	}
 
 	/**
@@ -224,7 +226,6 @@ public class Usuario
 	 */
 	public void setRegistro(String fecha)
 	{
-
 		this.registro = Calendar.getInstance();
 		StringTokenizer tokens = new StringTokenizer(fecha, "/"); //el formato es DD/MM/AAAA
 		int dia = Integer.parseInt(tokens.nextToken());

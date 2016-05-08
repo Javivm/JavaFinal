@@ -111,8 +111,8 @@ class LogIn extends JFrame{
 				peso = Float.parseFloat(arch.leePeso(username));
 				//System.out.println("Existe");
 				correo = arch.leeCorreo(username);
-
-				registro = "07/03/2016";
+				
+				registro = arch.leeRegistro(username);
 				//System.out.println("Existe");
 				//registro = arch.leeRegistro(username);
 				//System.out.println("Existe");

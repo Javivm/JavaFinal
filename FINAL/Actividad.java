@@ -37,6 +37,27 @@ public abstract class Actividad
 	}
 
 	/**
+	 * Costructor que se usa cuando se quiere crear una clase nueva desde la lectura del archivo
+	 * 
+	 * @param fecha la fecha de la actividad
+	 * @param tiempo el tiempo de la actividad
+	 * @param distancia la distancia de la actividad
+	 * @param tipo el tipo de actividad
+	 * @param calorias las calorias quemadas
+	 */
+	public Actividad(String dia, String mes, String ano, String tiempo, String distancia, String tipo, String calorias)
+	{
+		//fecha
+
+		this.fecha = Calendar.getInstance();
+		this.fecha.set(ano, mes, dia);
+		this.tiempo = Float.toString(tiempo);
+		this.distancia = Float.toString(distancia);
+		this.tipo = Integer.toString(tipo);
+		this.calorias = Float.toString(calorias);
+	}
+
+	/**
 	 * Metodo que obtiene la fecha en la que se realizo una actividad
 	 * 
 	 */

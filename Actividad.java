@@ -39,6 +39,32 @@ public abstract class Actividad
 	}
 
 	/**
+	 * Costructor que se usa cuando se quiere crear una clase nueva desde la lectura del archivo
+	 * 
+	 * @param fecha la fecha de la actividad
+	 * @param tiempo el tiempo de la actividad
+	 * @param distancia la distancia de la actividad
+	 * @param tipo el tipo de actividad
+	 * @param calorias las calorias quemadas
+	 */
+	public Actividad(String fecha, String tiempo, String distancia, String tipo, String calorias)
+	{
+		//fecha
+
+		this.fecha = Calendar.getInstance();
+		StringTokenizer tokens = new StringTokenizer(fecha, "/"); //el formato es DD/MM/AAAA
+		int dia = Integer.parseInt(tokens.nextToken());
+		int mes = Integer.parseInt(tokens.nextToken());
+		int ano = Integer.parseInt(tokens.nextToken());
+		this.fecha.set(ano, mes, dia);
+
+		this.tiempo = Float.toString(tiempo);
+		this.distancia = Float.toString(distancia);
+		this.tipo = Integer.toString(tipo);
+		this.calorias = Float.toString(calorias);
+	}
+
+	/**
 	 * Metodo que obtiene el tipo de acividad que es
 	 * 
 	 * @return el tipo de actividad que es

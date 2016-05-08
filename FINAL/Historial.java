@@ -9,47 +9,61 @@
  * @version %G%, %I%
  */
 
+import java.util.*;
+import java.lang.*;
+import java.util.StringTokenizer;
+import java.util.Scanner;
+
 public class Historial
 {
-	List<Actividad> listaActividades = new ArrayList<Actividad>();
+	ArrayList<Actividad> lista = new ArrayList<Actividad>();
 
-	/**
-	 * Metodo 
-	 * 
-	 */
-	public void setHistorial()
+	Historial(String usuario)
 	{
-		StringTokenizer tokens = new StringTokenizer(actividad, ",");
+		//abre el archivo del usuario
+		Archivos archivo = new Archivo();  //se hace el objeto archivo
+		String[] listaString = archivo.leeActividad(usuario);  //se manda llamar la funcion que regresa un String[] con las actividades
+		//empieza a leer desde la linea 8
+		//jala recursivamente un string que es cada una de las actividades
+		//por cada sctring jalado se hace un tokenizer [4,8,2016,1,4.3,4.3,1935.0001]
+		//dia,mes,ano,tipo,distancia,tiempo,calorias
+		StringTokenizer tokens;
+		Scanner scanner;
+		int basura;
+		for(int contador = 0 ; contador <20 ; contador++)
+		{
+			//aqui abrir el string y checar el tipo
+			tokens = new StringTokenizer(listaString[contador], ",");
+			scanner = new Scanner(listaString[contador]);
+			basura = scanner.nextInt();  //dia
+			basura = scanner.nextInt();  //mes
+			basura = scanner.nextInt();  //ano
 
-
-		int dia = Integer.valueOf(tokens.nextToken());
-		int mes = Integer.valueOf(tokens.nextToken());
-		int ano = Integer.valueOf(tokens.nextToken());
-		this.fecha.set(ano, mes, dia, 0, 0, 0);
-
-		this
-		//4,7,2016,3,1.4,5.6,744.8
-		//dia,mes,ano,tipoact,tiempo,distancia,calorias
-					String[] fields = new String[8];
-			fields[0] = nombreTF.getText();
-			fields[1] = nicknameTF.getText();
-			fields[2] = passwordTF.getText();
-			fields[3] = edadTF.getText();
-			if(mascRB.isSelected() == true)
-				fields[4] = "Masculino";
-			if(femRB.isSelected() == true)
-				fields[4] = "Femenino";
-			fields[5] = alturaTF.getText();
-			fields[6] = pesoTF.getText();
-			fields[7] = emailTF.getText();
+			switch(scanner.next())  //tipo
+			{
+				case 1:
+					lista.add(new Bicicleta(tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken()));
+					break;
+				case 2:
+					lista.add(new Caminata(tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken()));
+					break;
+				case 3:
+					lista.add(new Carrera(tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken()));
+					break;
+				case 4:
+					lista.add(new Eliptica(tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken()));
+					break;
+				case 5:
+					lista.add(new Kayak(tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken()));
+					break;
+				case 6:
+					lista.add(new Natacion(tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken(), tokens.nextToken()));
+					break;
+			}
+		}
 	}
 
-	/**
-	 * Metodo 
-	 * 
-	 * @return el dia de la actividad
-	 */
-	public void getHistorial()
+	public String toString()
 	{
 		
 	}

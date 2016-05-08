@@ -58,12 +58,12 @@ public class Archivos{
 		byte[] enterB = enterS.getBytes();
 
 		try{
-			out = new FileOutputStream(argumentos[0]+".txt");	
+			out = new FileOutputStream(argumentos[1]+".txt");	
 		}catch(FileNotFoundException e){
 
 		}
 		try{
-			for(int i = 0; i < 8; i++){
+			for(int i = 0; i < 9; i++){
 				byte[] cB = argumentos[i].getBytes();
 				out.write(cB);
 				out.write(enterB);
@@ -587,7 +587,7 @@ public class Archivos{
 
 		InputStreamReader isr = new InputStreamReader(file);
 		String line = "";
-		String[] actividades = new String[100];
+		String[] actividades = new String[20];
 
 		try
 		{

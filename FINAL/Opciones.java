@@ -21,8 +21,8 @@ public class Opciones extends JFrame{
     
     private JButton datos = new JButton("EDITAR DATOS");
     private JButton historial  = new JButton("BORRAR HISTORIAL");
-    private JButton baja  = new JButton("BAJA");
-    private JButton sesion = new JButton("SESION");
+    private JButton baja  = new JButton("DAR DE BAJA");
+    private JButton sesion = new JButton("CERRAR SESION");
     private JButton desarrolladores = new JButton("DESARROLLADORES");
     private JButton ayuda = new JButton("MONITOR DE PESO");
     private JButton atras = new JButton("ATRAS");
@@ -113,13 +113,16 @@ public class Opciones extends JFrame{
 
 	class bajaListener implements ActionListener{
 	public void actionPerformed(ActionEvent e){
-		System.out.println("Baja");
+		System.out.println("Baja");  
+		//esto recibe el usuario, borra el archivo y cierra el programa
+		System.exit(0);
 		}
 	}
 
 	class sesionListener implements ActionListener{
 	    public void actionPerformed(ActionEvent e){
 		System.out.println("Cerrar Sesion");
+		//tiene que guardar todo en el archivo
 	        System.exit(0);
 	    }
 	}

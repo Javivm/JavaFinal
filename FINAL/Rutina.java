@@ -13,7 +13,6 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.border.LineBorder;
 
-
 public class Rutina extends JFrame{//implementando el listener de eventos
     //... Components
     private Usuario datos;
@@ -21,8 +20,8 @@ public class Rutina extends JFrame{//implementando el listener de eventos
     private JTextField distanciaTF = new JTextField(20);
     private JButton agregar = new JButton("Agregar Actividad");
     private JButton regresar = new JButton("Regresar");
-    private JLabel timepo =new JLabel("Tiempo");
-    private JLabel distancia =new JLabel("Distancia");
+    private JLabel timepo =new JLabel("Tiempo (hh.mm)");
+    private JLabel distancia =new JLabel("Distancia (km)");
     private JLabel actividad = new JLabel("Agregar Actividad");
     private JLabel selecciona = new JLabel("Selecciona Actividad");
 
@@ -38,12 +37,12 @@ public class Rutina extends JFrame{//implementando el listener de eventos
 
 		frame.setVisible(true);
 
-    	actividades.addElement("Carrera");
+		actividades.addElement("Bicicleta");
     	actividades.addElement("Caminata");
-      	actividades.addElement("Natacion");
+    	actividades.addElement("Carrera");
     	actividades.addElement("Eliptica");
     	actividades.addElement("Kayaking");
-      	actividades.addElement("Eliptica");
+      	actividades.addElement("Natacion");
    
       	actividadesCombo.setSelectedIndex(0);
 
@@ -105,14 +104,21 @@ public class Rutina extends JFrame{//implementando el listener de eventos
     		if (actividadesCombo.getSelectedIndex() != -1) {                     
         		actividad = ""+actividadesCombo.getItemAt(actividadesCombo.getSelectedIndex());             
         	} 
-        	System.out.println(actividad);  	
+
+        	frame.dispose();
+        	System.out.println(actividad+datos.getNickname()); 
+        	//agregar la actividad
+        	//sacar un popup que te diga que se agrego correctamente, luego pones un boton de aceptar que te regrese al menu o algo asi 	
+	    	
 	    }
 	}
+
+
 
 	class RegresarListener implements ActionListener{
 	    public void actionPerformed(ActionEvent e){
 			new MainMenuPrincipal(datos);
-			dispose();
+			frame.dispose();
 	    }
 	}
 }
