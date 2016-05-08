@@ -11,14 +11,13 @@
 
 public class Historial
 {
-
-	
+	List<Actividad> listaActividades = new ArrayList<Actividad>();
 
 	/**
 	 * Metodo 
 	 * 
 	 */
-	public void setHistorial(String actividad)
+	public void setHistorial()
 	{
 		StringTokenizer tokens = new StringTokenizer(actividad, ",");
 

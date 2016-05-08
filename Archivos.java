@@ -92,15 +92,6 @@ public class Archivos{
 
 
 
-
-
-
-
-
-
-
-
-
 	/**
 	 * Metodo lee el nombre del usuario desde un archivo
 	 * 
@@ -548,7 +539,7 @@ public class Archivos{
 	 * @param usuario el username del usuario
 	 * @param actividad el string 
 	 */
-	public void guardaActividad(String usuario)
+	public void guardaActividad(String usuario, String actividad)
 	{
 		BufferedWriter buffer = null;
  
