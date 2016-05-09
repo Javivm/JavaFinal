@@ -1,0 +1,11 @@
+Luis Padill
+padi
+padi
+20/03/1993
+Masculino
+1.80
+70
+luis@com
+8/4/2016
+
+8,4,2016,1.4,6.42,0,744.8

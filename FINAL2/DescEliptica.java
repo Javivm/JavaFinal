@@ -1,0 +1,78 @@
+ //librerias necesarias
+import java.awt.*;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.Dimension;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+import javax.swing.border.LineBorder;
+
+
+class DescEliptica extends JFrame{
+
+   private JLabel actividades=new JLabel("ELIPTICA");
+	private Usuario datos;
+
+	//CONSTRUCTOR
+    public DescEliptica(Usuario datos){
+	JPanel content = new JPanel();
+    JButton regresar = new JButton("Regresar");
+	
+    this.datos = datos;
+
+    content.setBackground(new Color(200,200,200));  
+	actividades.setFont(new Font("Serif",Font.BOLD,80));
+	content.add(actividades);
+	content.add(new ScrolledPane3());
+    
+    LineBorder line=new LineBorder(Color.black,2,true);
+    content.add(regresar);
+    regresar.setBackground(new Color(255,119,10));
+    regresar.setBorder(line);
+
+    regresar.addActionListener(new regresarListener());
+
+    this.setLocationRelativeTo(null);   
+    this.setContentPane(content);
+    this.pack();
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setTitle("Actividades");
+    this.setSize(500,700);
+
+
+
+    }
+
+class regresarListener implements ActionListener{
+    public void actionPerformed(ActionEvent e){
+	new MainActividades(datos);
+	dispose();
+    }
+}
+
+}
+
+ 
+ class ScrolledPane3 extends JPanel
+{
+    private JScrollPane vertical;
+    private JTextArea console;
+
+    public ScrolledPane3()
+    {
+        console = new JTextArea("Una bicicleta eliptica es un aparato de gimnasio \n para hacer un tipo de ejercicio aerobico de pie \n que consta de dos pedales sobre los que se marcha \n y de dos barras verticales que se cogen con las manos \n para ayudar al movimiento. \n El ejercicio es similar al del esqui nordico \n por el movimiento hacia adelante de los pies \n y el ayudarse con los brazos, el cual se combina \n con un movimiento circular como el pedaleo  \n de la bicicleta. \n Esta destinado a gente que no posee tiempo para \n hacer deportes o asistir a un gimnasio \n aunque tambien se la encuentra en todo gimnasio \n bien equipado. \n Junto con la bicicleta estatica es uno de los aparatos \n deportivos mas populares para el ejercicio aerobico. \n Se recomienda que tenga un volante de cierto peso \n (6 kg o mas) lo que le da al aparato mayor inercia \n y menor desgaste.",28,28);
+		console.setFont(new Font("Serif",Font.PLAIN,15));
+		console.setBackground(new Color(255,119,10));
+		console.setPreferredSize(new Dimension(700,350));
+        console.setEditable(false);
+        vertical = new JScrollPane(console);
+        vertical.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        add(vertical);
+	}
+}
