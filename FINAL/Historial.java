@@ -22,6 +22,7 @@ public class Historial
 
 	Historial(String usuario)
 	{
+		
 		act = arch.leeActividad(usuario);
 		//System.out.println(act.length);
 		//System.out.println("a");
@@ -76,42 +77,14 @@ public class Historial
 		}
 	}
 
-	public void setDia(String dia)
+	public void recibe(Actividad actividad)
 	{
-		this.dia = dia;
+		Archivos archivo = new Archivos();
+		//4,8,2016,1,4.3,4.3,1935.0001
+
+		//guardar el archivo
+		archivo.guardaActividad(datos.getUsuario(), actividad.getCSV());
+		//agregarlo a la lista
+		lista.add(actividad);
 	}
-	public int getDia()
-	{
-		return Integer.parseInt()
-	}
-	public void setMes(String mes)
-	{
-		this.mes = mes;
-	}
-	public int getMes(){}
-	public void setAno(String ano)
-	{
-		this.ano = ano;
-	}
-	public int getAno(){}
-	public void setTiempo(String tiempo)
-	{
-		this.tiempo = tiempo;
-	}
-	public float getTiempo(){}
-	public void setDistancia(String distancia)
-	{
-		this.distancia = distancia;
-	}
-	public float getDistancia(){}
-	public void setTipo(String tipo)
-	{
-		this.tipo = tipo;
-	}
-	public int getTipo(){}
-	public void setCalorias(String calorias)
-	{
-		this.calorias = calorias;
-	}
-	public float getCalorias(){}
 }

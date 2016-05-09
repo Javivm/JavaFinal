@@ -98,18 +98,45 @@ public class Rutina extends JFrame{//implementando el listener de eventos
     }
 
 	class AgregarListener implements ActionListener{
-		String actividad = "";
+		String actividadS = "";
 
 	    public void actionPerformed(ActionEvent e){
-    		if (actividadesCombo.getSelectedIndex() != -1) {                     
-        		actividad = ""+actividadesCombo.getItemAt(actividadesCombo.getSelectedIndex());             
+
+	    	Actividad actividad;
+	    	int tipoActividad;
+
+	    	if (actividadesCombo.getSelectedIndex() != -1)
+    		{                     
+        		actividadS = ""+actividadesCombo.getItemAt(actividadesCombo.getSelectedIndex());             
         	} 
 
+	    	if(actividadS.equals("Bicicleta")){
+	    		tipoActividad = 1;
+	    		actividad = new Bicicleta(Float.parseFloat(tiempoTF.getText()), Float.parseFloat(distanciaTF.getText()));
+	    	}
+	    	else if(actividadS.equals("Caminata")){
+	    		tipoActividad = 2;
+	    		actividad = new Caminata(Float.parseFloat(tiempoTF.getText()), Float.parseFloat(distanciaTF.getText()));
+	    	}
+	    	else if(actividadS.equals("Carrera")){
+	    		tipoActividad = 3;
+	    		actividad = new Carrera(Float.parseFloat(tiempoTF.getText()), Float.parseFloat(distanciaTF.getText()));
+	    	}
+	    	else if(actividadS.equals("Eliptica")){
+	    		tipoActividad = 4;
+	    		actividad = new Eliptica(Float.parseFloat(tiempoTF.getText()), Float.parseFloat(distanciaTF.getText()));
+	    	}
+	    	else if(actividadS.equals("Kayaking")){
+	    		tipoActividad = 5;
+	    		actividad = new Kayak(Float.parseFloat(tiempoTF.getText()), Float.parseFloat(distanciaTF.getText()));
+	    	}
+	    	else if(actividadS.equals("Natacion")){
+	    		tipoActividad = 6;
+	    		actividad = new Natacion(Float.parseFloat(tiempoTF.getText()), Float.parseFloat(distanciaTF.getText()));
+	    	}
+
+			datos.historial.recibe(actividad);
         	frame.dispose();
-        	System.out.println(actividad+datos.getNickname()); 
-        	//agregar la actividad
-        	//sacar un popup que te diga que se agrego correctamente, luego pones un boton de aceptar que te regrese al menu o algo asi 	
-	    	
 	    }
 	}
 

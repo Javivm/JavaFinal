@@ -155,4 +155,34 @@ public abstract class Actividad
 	{
 		return this.calorias;
 	}
+
+	/**
+	 * Metodo que recibe el tipo de la actividad
+	 * 
+	 * @param tipo el tipo de la actividad
+	 */
+	public void setTipo(int tipo)
+	{
+		this.tipo = tipo;
+	}
+
+	/**
+	 * Metodo que regresa el tipo de acividad
+	 * 
+	 * @return el tipo de la actividad
+	 */
+	public int getTipo()
+	{
+		return this.tipo;
+	}
+
+	/**
+	 * Metodo regresa una actividad en csv
+	 * 
+	 * @return la actividad en csv
+	 */
+	public String getCSV()
+	{
+		return Integer.toString(getDia())+Integer.toString(getMes())+Integer.toString(getAno())+Float.toString(getTiempo())+Float.toString(getDistancia())+Integer.toString(getTipo())+Float.toString(getCalorias());
+	}
 }
