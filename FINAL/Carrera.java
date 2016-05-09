@@ -25,7 +25,7 @@ public class Carrera extends Actividad
 	 */
 	public Carrera(float tiempo, float distancia, float peso)
 	{
-		super(tiempo, distancia);
+		super(tiempo, distancia, 3);
 		this.setCalorias(peso);
 	}
 

@@ -25,7 +25,7 @@ public class Eliptica extends Actividad
 	 */
 	public Eliptica(float tiempo, float distancia, float peso)
 	{
-		super(tiempo, distancia);
+		super(tiempo, distancia, 4);
 		this.setCalorias(peso);
 	}
 

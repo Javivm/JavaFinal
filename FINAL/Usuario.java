@@ -28,7 +28,7 @@ public class Usuario
 	private float peso;
 	private String correo;
 	private Calendar registro;
-	private Historial historial;
+	public Historial historial;
 
 	/**
 	 * Constructor de la clase
@@ -47,7 +47,7 @@ public class Usuario
 		this.setFecha(fecha);
 		this.setRegistro(registro);
 		this.password = password;
-		this.historial = new Historial(nickname);
+		this.historial = new Historial(nickname, this);
 	}
 
 	/**

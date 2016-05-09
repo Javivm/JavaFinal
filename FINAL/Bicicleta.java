@@ -25,7 +25,7 @@ public class Bicicleta extends Actividad
 	 */
 	public Bicicleta(float tiempo, float distancia, float peso)
 	{
-		super(tiempo, distancia);
+		super(tiempo, distancia, 1);
 		this.setCalorias(peso);
 	}
 

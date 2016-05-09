@@ -38,6 +38,20 @@ public abstract class Actividad
 	}
 
 	/**
+	 * Constructor de la clase
+	 * 
+	 * @param tiempo el tiempo de la actividad
+	 * @param distancia la distancia de la actividad
+	 */
+	public Actividad(float tiempo, float distancia, int tipo)
+	{
+		this.tipo = tipo;
+		this.setFecha();
+		this.setTiempo(tiempo);
+		this.setDistancia(distancia);
+	}
+
+	/**
 	 * Costructor que se usa cuando se quiere crear una clase nueva desde la lectura del archivo
 	 * 
 	 * @param fecha la fecha de la actividad
@@ -183,6 +197,6 @@ public abstract class Actividad
 	 */
 	public String getCSV()
 	{
-		return Integer.toString(getDia())+Integer.toString(getMes())+Integer.toString(getAno())+Float.toString(getTiempo())+Float.toString(getDistancia())+Integer.toString(getTipo())+Float.toString(getCalorias());
+		return Integer.toString(getDia())+","+Integer.toString(getMes())+","+Integer.toString(getAno())+","+Float.toString(getTiempo())+","+Float.toString(getDistancia())+","+Integer.toString(getTipo())+","+Float.toString(getCalorias());
 	}
 }

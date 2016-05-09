@@ -19,10 +19,11 @@ public class Historial
 	Archivos arch = new Archivos();
 	String[] act = new String[] { };
 	int i;
+	Usuario datos;
 
-	Historial(String usuario)
+	Historial(String usuario, Usuario datos)
 	{
-		
+		this.datos = datos;
 		act = arch.leeActividad(usuario);
 		//System.out.println(act.length);
 		//System.out.println("a");
@@ -35,6 +36,8 @@ public class Historial
 		String calorias;
 		StringTokenizer tokens;
 
+		System.out.println("gola");
+
 		for(i = 0; i < act.length - 3; i++){
 			if(act[i] != null){
 				//aqui abrir el string y checar el tipo
@@ -44,12 +47,16 @@ public class Historial
 				dia = tokens.nextToken();
 				mes = tokens.nextToken();
 				ano = tokens.nextToken();
-				tipo = tokens.nextToken();
 				tiempo = tokens.nextToken();
 				distancia = tokens.nextToken();
+				tipo = tokens.nextToken();
 				calorias = tokens.nextToken();
 
-				System.out.println(dia+mes+ano+tipo+tiempo+distancia+calorias);
+				System.out.println(act.length);
+
+				System.out.println(dia+mes+ano+tiempo+distancia+tipo+calorias);
+
+				System.out.println(tipo);
 
 				switch(Integer.parseInt(tipo)) //tipo
 				{
@@ -73,6 +80,7 @@ public class Historial
 						break;
 				}
 				System.out.println(act[i]);
+				System.out.println(i);
 			}
 		}
 	}
@@ -83,7 +91,7 @@ public class Historial
 		//4,8,2016,1,4.3,4.3,1935.0001
 
 		//guardar el archivo
-		archivo.guardaActividad(datos.getUsuario(), actividad.getCSV());
+		archivo.guardaActividad(datos.getNickname(), actividad.getCSV());
 		//agregarlo a la lista
 		lista.add(actividad);
 	}

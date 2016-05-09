@@ -102,7 +102,7 @@ public class Rutina extends JFrame{//implementando el listener de eventos
 
 	    public void actionPerformed(ActionEvent e){
 
-	    	Actividad actividad;
+	    	Actividad actividad = null;
 	    	int tipoActividad;
 
 	    	if (actividadesCombo.getSelectedIndex() != -1)
@@ -112,35 +112,32 @@ public class Rutina extends JFrame{//implementando el listener de eventos
 
 	    	if(actividadS.equals("Bicicleta")){
 	    		tipoActividad = 1;
-	    		actividad = new Bicicleta(Float.parseFloat(tiempoTF.getText()), Float.parseFloat(distanciaTF.getText()));
+	    		actividad = new Bicicleta(Float.parseFloat(timepoTF.getText()), Float.parseFloat(distanciaTF.getText()), datos.getPeso());
 	    	}
 	    	else if(actividadS.equals("Caminata")){
 	    		tipoActividad = 2;
-	    		actividad = new Caminata(Float.parseFloat(tiempoTF.getText()), Float.parseFloat(distanciaTF.getText()));
+	    		actividad = new Caminata(Float.parseFloat(timepoTF.getText()), Float.parseFloat(distanciaTF.getText()), datos.getPeso());
 	    	}
 	    	else if(actividadS.equals("Carrera")){
 	    		tipoActividad = 3;
-	    		actividad = new Carrera(Float.parseFloat(tiempoTF.getText()), Float.parseFloat(distanciaTF.getText()));
+	    		actividad = new Carrera(Float.parseFloat(timepoTF.getText()), Float.parseFloat(distanciaTF.getText()), datos.getPeso());
 	    	}
 	    	else if(actividadS.equals("Eliptica")){
 	    		tipoActividad = 4;
-	    		actividad = new Eliptica(Float.parseFloat(tiempoTF.getText()), Float.parseFloat(distanciaTF.getText()));
+	    		actividad = new Eliptica(Float.parseFloat(timepoTF.getText()), Float.parseFloat(distanciaTF.getText()), datos.getPeso());
 	    	}
 	    	else if(actividadS.equals("Kayaking")){
 	    		tipoActividad = 5;
-	    		actividad = new Kayak(Float.parseFloat(tiempoTF.getText()), Float.parseFloat(distanciaTF.getText()));
+	    		actividad = new Kayak(Float.parseFloat(timepoTF.getText()), Float.parseFloat(distanciaTF.getText()), datos.getPeso());
 	    	}
 	    	else if(actividadS.equals("Natacion")){
 	    		tipoActividad = 6;
-	    		actividad = new Natacion(Float.parseFloat(tiempoTF.getText()), Float.parseFloat(distanciaTF.getText()));
+	    		actividad = new Natacion(Float.parseFloat(timepoTF.getText()), Float.parseFloat(distanciaTF.getText()), datos.getPeso());
 	    	}
 
 			datos.historial.recibe(actividad);
-        	frame.dispose();
 	    }
 	}
-
-
 
 	class RegresarListener implements ActionListener{
 	    public void actionPerformed(ActionEvent e){
